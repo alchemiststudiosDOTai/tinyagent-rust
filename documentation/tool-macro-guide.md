@@ -30,7 +30,7 @@ struct MyToolParams {
 Use the `tool!` macro with a closure that contains your tool logic:
 
 ```rust
-tinyagent_macros::tool!(
+tiny_agent_rs::tool!(
     name = "my_tool",
     description = "Brief description of what the tool does",
     params = MyToolParams,
@@ -160,7 +160,7 @@ struct TextTransformParams {
     operation: String,
 }
 
-tinyagent_macros::tool!(
+tiny_agent_rs::tool!(
     name = "text_transform",
     description = "Transform text by applying uppercase, lowercase, or reverse operations",
     params = TextTransformParams,
@@ -199,7 +199,7 @@ struct MathParams {
     operation: String,
 }
 
-tinyagent_macros::tool!(
+tiny_agent_rs::tool!(
     name = "math_calculator",
     description = "Perform basic math operations on two numbers",
     params = MathParams,
@@ -243,7 +243,7 @@ struct ApiParams {
     params: Option<std::collections::HashMap<String, String>>,
 }
 
-tinyagent_macros::tool!(
+tiny_agent_rs::tool!(
     name = "api_call",
     description = "Make HTTP GET requests to external APIs",
     params = ApiParams,
@@ -278,7 +278,7 @@ tinyagent_macros::tool!(
 Return errors as `String`:
 
 ```rust
-tinyagent_macros::tool!(
+tiny_agent_rs::tool!(
     name = "divide",
     description = "Divide two numbers",
     params = DivideParams,
@@ -448,7 +448,7 @@ struct MyToolParams {
     value: i32,
 }
 
-tinyagent_macros::tool!(
+tiny_agent_rs::tool!(
     name = "my_tool",
     description = "Does something useful",
     params = MyToolParams,
@@ -529,4 +529,4 @@ struct MyParams { ... }
 - [Example: macro_tool_example.rs](../examples/macro_tool_example.rs)
 - [Tests: tests/macro_test.rs](../tests/macro_test.rs)
 - [Schema validation: tests/schema_validation_test.rs](../tests/schema_validation_test.rs)
-- [Macro implementation: tinyagent-macros/src/lib.rs](../tinyagent-macros/src/lib.rs)
+- [Macro implementation: tinyagent_macros/src/lib.rs](../tinyagent_macros/src/lib.rs)

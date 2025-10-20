@@ -1,6 +1,6 @@
+use crate::completion_schema;
 use schemars::JsonSchema;
 use serde::{Deserialize, Serialize};
-use tinyagent_macros::completion_schema;
 
 /// Structured vacation plan returned by the vacation planner agent.
 #[derive(Debug, Clone, Serialize, Deserialize, JsonSchema)]

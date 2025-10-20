@@ -26,7 +26,7 @@ struct Address {
     zip_code: Option<String>,
 }
 
-tinyagent_macros::tool!(
+tiny_agent_rs::tool!(
     name = "complex_tool",
     description = "A tool with complex nested parameters",
     params = ComplexParams,

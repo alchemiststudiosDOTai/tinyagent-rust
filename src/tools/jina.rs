@@ -6,7 +6,7 @@ use std::pin::Pin;
 /// Parameters accepted by the Jina reader tool
 #[derive(Debug, Serialize, Deserialize, schemars::JsonSchema)]
 pub struct JinaReaderParams {
-    /// Fully-qualified URL to fetch (e.g. https://www.example.com)
+    /// Fully-qualified URL to fetch (e.g. <https://www.example.com>)
     pub url: String,
     /// When true, bypass cached snapshot
     #[serde(default)]

@@ -10,7 +10,7 @@ struct TestParams {
     optional_text: Option<String>,
 }
 
-tinyagent_macros::tool!(
+tiny_agent_rs::tool!(
     name = "test_tool",
     description = "A test tool that doubles a value",
     params = TestParams,

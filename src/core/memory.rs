@@ -3,7 +3,7 @@ use serde::{Deserialize, Serialize};
 use serde_json::Value;
 use tracing::info;
 
-/// Memory structure that replaces raw Vec<Value> messages
+/// Memory structure that replaces raw `Vec<Value>` messages
 /// Maintains the agent's reasoning steps and converts them to OpenAI format
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct AgentMemory {

@@ -12,7 +12,7 @@ struct TextTransformParams {
     operation: String,
 }
 
-tinyagent_macros::tool!(
+tiny_agent_rs::tool!(
     name = "text_transform",
     description = "Transform text by applying uppercase, lowercase, or reverse operations",
     params = TextTransformParams,
@@ -43,7 +43,7 @@ struct MathParams {
     operation: String,
 }
 
-tinyagent_macros::tool!(
+tiny_agent_rs::tool!(
     name = "math_calculator",
     description = "Perform basic math operations on two numbers",
     params = MathParams,

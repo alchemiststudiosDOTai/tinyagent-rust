@@ -1,9 +1,10 @@
 [package]
-name = "tinyagent-macros"
+name = "tinyagent_macros"
 version = "0.1.0"
 edition = "2021"
 description = "Procedural macros for tiny-agent-rs tool development"
 license = "MIT"
+readme = "../README.md"
 
 [lib]
 proc-macro = true

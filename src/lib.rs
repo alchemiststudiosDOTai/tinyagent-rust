@@ -38,7 +38,7 @@ pub use core::{
 pub use error::{AgentError, Result};
 pub use schemas::validator::Validator;
 pub use schemas::{schema_type_name, CompletionSchema, SchemaHandle};
-pub use tinyagent_macros::completion_schema;
+pub use tinyagent_macros::{completion_schema, tool};
 pub use tools::{FunctionFactory, Tool};
 pub use types::response::{deserialize_structured_response, StructuredPayload};
 

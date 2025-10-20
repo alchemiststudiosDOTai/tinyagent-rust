@@ -1,5 +1,5 @@
 [workspace]
-members = [".", "tinyagent-macros"]
+members = [".", "tinyagent_macros"]
 
 [package]
 name = "tiny-agent-rs"
@@ -8,6 +8,7 @@ edition = "2021"
 description = "A lightweight, type-safe Rust agent library for LLM tool calling"
 license = "MIT"
 repository = "https://github.com/tunahorse/tinyagent-rust"
+readme = "README.md"
 keywords = ["agent", "llm", "tool-calling", "openai", "async"]
 categories = ["asynchronous", "web-programming::http-client"]
 
@@ -27,12 +28,12 @@ anyhow = "1.0"
 async-trait = "0.1"
 dotenvy = "0.15"
 reqwest = { version = "0.11", features = ["json"] }
-tinyagent-macros = { path = "tinyagent-macros" }
+tinyagent_macros = { path = "tinyagent_macros" }
 
 [dev-dependencies]
 tokio-test = "0.4"
 mockito = "1.0"
-tinyagent-macros = { path = "tinyagent-macros" }
+tinyagent_macros = { path = "tinyagent_macros" }
 
 [features]
 default = ["cli"]
