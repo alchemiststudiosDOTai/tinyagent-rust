@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+# Abort on first failure.
+set -euo pipefail
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+cd "$REPO_ROOT"
+
+echo "[pre-commit] Running gitleaks secret scan..."
+if ! command -v gitleaks >/dev/null 2>&1; then
+    echo "[pre-commit] gitleaks is required. Install it from https://github.com/gitleaks/gitleaks/releases and ensure it's on your PATH." >&2
+    exit 1
+fi
+
+GITLEAKS_CMD=(gitleaks protect --staged --redact --source "$REPO_ROOT")
+if [[ -f "$REPO_ROOT/gitleaks.toml" ]]; then
+    GITLEAKS_CMD+=(--config "$REPO_ROOT/gitleaks.toml")
+fi
+
+"${GITLEAKS_CMD[@]}"
+
+echo "[pre-commit] Running cargo fmt --check..."
+cargo fmt --all -- --check
+
+echo "[pre-commit] Running cargo clippy..."
+cargo clippy --all-targets --all-features -- -D warnings
+
+echo "[pre-commit] Running cargo test..."
+cargo test
+
+echo "[pre-commit] All checks passed."

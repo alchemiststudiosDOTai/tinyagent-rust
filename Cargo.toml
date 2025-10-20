@@ -1,0 +1,51 @@
+[workspace]
+members = [".", "tinyagent-macros"]
+
+[package]
+name = "tiny-agent-rs"
+version = "0.1.0"
+edition = "2021"
+description = "A lightweight, type-safe Rust agent library for LLM tool calling"
+license = "MIT"
+repository = "https://github.com/tunahorse/tinyagent-rust"
+keywords = ["agent", "llm", "tool-calling", "openai", "async"]
+categories = ["asynchronous", "web-programming::http-client"]
+
+[dependencies]
+tokio = { version = "1.0", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+schemars = { version = "0.8", features = ["derive"] }
+async-openai = "0.14"
+thiserror = "1.0"
+tracing = "0.1"
+tracing-subscriber = "0.3"
+serde_path_to_error = "0.1"
+jsonschema = "0.17"
+clap = { version = "4.0", features = ["derive"], optional = true }
+anyhow = "1.0"
+async-trait = "0.1"
+dotenvy = "0.15"
+reqwest = { version = "0.11", features = ["json"] }
+tinyagent-macros = { path = "tinyagent-macros" }
+
+[dev-dependencies]
+tokio-test = "0.4"
+mockito = "1.0"
+tinyagent-macros = { path = "tinyagent-macros" }
+
+[features]
+default = ["cli"]
+cli = ["clap"]
+
+[[bin]]
+name = "tiny-agent"
+path = "src/main.rs"
+required-features = ["cli"]
+
+[workspace.dependencies]
+tokio = { version = "1.0", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+schemars = { version = "0.8", features = ["derive"] }
+thiserror = "1.0"
